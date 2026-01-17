@@ -79,7 +79,7 @@
             <!-- Join Button with Shine Effect -->
             <div class="flex justify-center">
                 <button @click="redirectToTg"
-                    class="rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 overflow-hidden transform hover:scale-105">
+                    class="join-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md transition-all duration-300 overflow-hidden transform hover:scale-105">
                     <span class="relative z-10">Join Channel</span>
                     <!-- Shine Effect -->
                     <div
