@@ -23,8 +23,13 @@
 
             <!-- Title -->
             <h1 class="text-white text-2xl font-extrabold text-center mb-2 leading-tight">
-                🚀 Target Hunter Indicator 🔥📊
+                🚀 TARGET HUNTER 📊
             </h1>
+
+            <!-- Subtitle -->
+            <h2 class="text-white text-md font-bold text-center mb-4 leading-tight">
+                SMART PROFIT SYSTEM
+            </h2>
 
             <div class="text-white text-sm my-4 text-center">
             <p class="mt-4 text-base">
@@ -39,7 +44,7 @@
             <!-- Key Features Header -->
             <div class="text-white text-sm mb-3 text-center">
                 <p class="mt-4 text-lg font-semibold flex items-center justify-center gap-2">
-                    ✅ Accuracy up to 95% 🎯
+                    ✅ Real-Time Trade Opportunities 🎯
                 </p>
             </div>
 
@@ -47,19 +52,19 @@
             <div class="space-y-3 text-white text-sm justify-center text-center">
                 <!-- <div class="mt-6 space-y-3 text-left inline-block"> -->
                     <p class="  ">
-                    ✅ Works in All Segments
+                    📊 Multi-Year Tested Logic 
                     </p>
                     <p class="">
-                    ✅ AI + Data-Driven Signals 📊
+                    📈 Trend + Volume Confirmation 
                     </p>
                     <p class=" ">
-                    ✅ Advanced Trend & Volume Analysis 🔍
+                    🔔 Real Time Trade Alerts 
                     </p>
-                    <p class=" ">
-                    ✅ Real-Time Buy/Sell Alerts ⏰
-                    </p>
+                    <!-- <p class=" ">
+                    ⭐ Official Partner with Star Trader 
+                    </p> -->
                     <p class="">
-                    ✅ Designed for Consistent Results 💹
+                    💹 Designed for Consistent Results 
                     </p>
                 <!-- </div> -->
 
@@ -67,30 +72,30 @@
 
             <!-- Join Channel Text -->
               <p class="text-white text-center my-6 font-medium">
-                    ✅ 👇 Click on the below link Before it Expires 👇
+                    👇 Click on the below link Before it Expires 👇
               </p>
-              <p class="text-center my-6 font-medium text-red-400 text-2xl">
-                    Invitation closes in {{ countdown }}s
-              </p>
-            <!-- <p class="text-white text-center my-6 font-medium">
-                🚀Join our FREE Channel to see the Magic unfold! 🚀
-            </p> -->
-
-            <!-- Join Button with Shine Effect -->
-            <div class="flex justify-center">
-                <button @click="redirectToTg"
-                    class="join-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md transition-all duration-300 overflow-hidden transform hover:scale-105">
-                    <span class="relative z-10">Join Channel</span>
+              <!-- <p class="text-white text-center my-6 font-medium">
+                  🚀Join our FREE Channel to see the Magic unfold! 🚀
+                </p> -->
+                
+                <!-- Join Button with Shine Effect -->
+                <div class="flex justify-center">
+                    <button @click="redirectToTg"
+                    class="join-button bg-blue-600 hover:bg-blue-700 text-white border border-white font-semibold py-3 px-8 rounded-full transition-all duration-300 overflow-hidden transform hover:scale-105">
+                    <span class="relative z-10">Open Telegram & Join Now</span>
                     <!-- Shine Effect -->
                     <div
-                        class="shine-overlay absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full skew-x-12">
-                    </div>
-                </button>
-            </div>
+                    class="shine-overlay absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -translate-x-full skew-x-12">
+                </div>
+            </button>
+        </div>
+        <p class="text-center my-6 font-medium text-red-400 text-2xl">
+              Invitation closes in {{ countdown }}s
+        </p>
 
             <!-- Updated Content -->
-            <div class="text-sm text-white/40 leading-tight mt-4 text-center">
-                If you have Telegram you can view and join, Target Hunter Indicator right away.
+            <div class="text-[12px] text-white/40 leading-tight mt-4 text-center">
+                If you have Telegram you can view and join, Target Hunter right away.
             </div>
         </div>
     </div>
@@ -116,8 +121,32 @@ onMounted(() => {
 onUnmounted(() => {
     clearInterval(timer);
 });
+// const redirectToTg = () => {
+//     window.open('https://telegram.me/+6OF3nvW5gdVkY2I1', '_blank')
+// }
 const redirectToTg = () => {
-    window.open('https://telegram.me/+6OF3nvW5gdVkY2I1', '_blank')
+    const params = new URLSearchParams(window.location.search)
+    const campaign = params.get('utm_campaign')
+
+    let telegramLink = "https://t.me/+rjxI_6nSGWEzMzll"  // default (original link)
+
+    if (campaign === "camp1") {
+        telegramLink = "https://t.me/+rjxI_6nSGWEzMzll"
+    } else if (campaign === "camp2") {
+        telegramLink = "https://t.me/+ByqRz_MgVJs4NmZl"
+    } else if (campaign === "camp3") {
+        telegramLink = "https://t.me/+Ey1TxP6PQ6w5YWY1"
+    } else if (campaign === "camp4") {
+        telegramLink = "https://t.me/+WYfZXeGRrY85ZjRl"
+    }
+
+    if (window.fbq) {
+        window.fbq('track', 'Subscribe', {
+            campaign: campaign || "default"
+        })
+    }
+
+    window.open(telegramLink, '_blank')
 }
 const patternIcons = ['📊', '💰', '📈', '🎯', '⚡', '💹', '📋', '⏰', '🔔', '💎']
 </script>
@@ -139,7 +168,7 @@ const patternIcons = ['📊', '💰', '📈', '🎯', '⚡', '💹', '📋', '�
 
 .join-button {
     position: relative;
-    background: linear-gradient(45deg, #2563eb, #3b82f6);
+    background: linear-gradient(45deg, #0f46bd, #286ddd);
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
